@@ -25,6 +25,7 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/svelte": "^5.2.4",
+		"@unocss/extractor-svelte": "^66.1.2",
 		"@unocss/svelte-scoped": "^66.1.2",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
@@ -54,6 +55,8 @@
 		"@threlte/theatre": "^3.0.3",
 		"@threlte/xr": "^1.0.5",
 		"@types/three": "^0.176.0",
-		"three": "^0.176.0"
+		"three": "^0.176.0",
+		"tweakpane": "3.1.5",
+		"@studio-freight/lenis": "^1.0.39"
 	}
 }
