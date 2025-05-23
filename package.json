@@ -57,6 +57,7 @@
 		"@types/three": "^0.176.0",
 		"three": "^0.176.0",
 		"tweakpane": "3.1.5",
-		"@studio-freight/lenis": "^1.0.39"
+		"@studio-freight/lenis": "^1.0.39",
+		"postprocessing": "^6.37.3"
 	}
 }

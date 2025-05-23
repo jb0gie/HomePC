@@ -14,13 +14,13 @@
     import { onMount } from 'svelte'
     import { Tween } from 'svelte/motion'
     import { Vector2 } from 'three'
-    import { game } from './game/Game.svelte'
+    import { computer } from './computer'
   
     const { camera, renderer, autoRender, renderStage } = useThrelte()
   
     let bloomEffect: BloomEffect | undefined = undefined
   
-    let machineIsOff = $derived(game.state === 'off' ? true : false)
+    let machineIsOff = $derived($computer.state === 'off' ? true : false)
   
     const bloomIntensity = new Tween(0, {
       duration: 3e3
@@ -33,7 +33,7 @@
       if (bloomEffect) bloomEffect.intensity = bloomIntensity.current
     })
     $effect(() => {
-      if ($camera && game.arcadeMachineScene) {
+      if ($camera && $computer.arcadeMachineScene) {
         addComposerAndPasses()
       }
     })
@@ -43,7 +43,7 @@
     const addComposerAndPasses = () => {
       composer.removeAllPasses()
   
-      composer.addPass(new RenderPass(game.arcadeMachineScene, $camera))
+      composer.addPass(new RenderPass($computer.arcadeMachineScene, $camera))
       bloomEffect = new BloomEffect({
         intensity: bloomIntensity.current,
         luminanceThreshold: 0.15,

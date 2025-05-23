@@ -4,18 +4,18 @@
     import { cubicIn, cubicOut } from 'svelte/easing'
     import { Tween } from 'svelte/motion'
     import { DEG2RAD } from 'three/src/math/MathUtils.js'
-    import { game } from './Game.svelte'
+    import { computer } from './computer'
   
     let mainUiTexts = $derived.by(() => {
-      if (game.state === 'game-over')
+      if ($computer.state === 'game-over')
         return {
-          text: `Game Over\nScore: ${game.score}`,
+          text: `Game Over\nScore: ${$computer.score}`,
           size: {
             width: 7,
             height: 2.5
           }
         }
-      if (game.state === 'menu')
+      if ($computer.state === 'menu')
         return {
           text: 'Press Space\nto Start',
           size: {
@@ -23,9 +23,9 @@
             height: 2.5
           }
         }
-      if (game.state === 'level-complete')
+      if ($computer.state === 'level-complete')
         return {
-          text: `Level ${game.levelIndex + 1} Complete\nScore: ${game.score}`,
+          text: `Level ${$computer.levelIndex + 1} Complete\nScore: ${$computer.score}`,
           size: {
             width: 10,
             height: 2.5
@@ -58,7 +58,7 @@
         <T.MeshBasicMaterial color="#08060a" />
   
         <Edges
-          color={game.baseColor}
+          color={$computer.baseColor}
           scale={1.01}
         />
       </T.Mesh>
@@ -74,7 +74,7 @@
         textAlign="center"
         fontSize={0.4}
         lineHeight={2}
-        color={game.baseColor}
+        color={$computer.baseColor}
         position.y={1}
         text={mainUiTexts?.text}
       />
@@ -89,7 +89,7 @@
     anchorY="50%"
     textAlign="center"
     fontSize={0.3}
-    color={game.baseColor}
+    color={$computer.baseColor}
     position={[-4.56, 1, -3.4]}
     text="LVL"
   />
@@ -101,9 +101,9 @@
     font="/fonts/beefd.ttf"
     lineHeight={1.4}
     fontSize={0.7}
-    color={game.baseColor}
+    color={$computer.baseColor}
     position={[-4.56, 1, -3]}
-    text={(game.levelIndex + 1).toString()}
+    text={($computer.levelIndex + 1).toString()}
   />
   
   <!-- SCORE (right column) -->
@@ -114,7 +114,7 @@
     textAlign="center"
     fontSize={0.3}
     font="/fonts/beefd.ttf"
-    color={game.baseColor}
+    color={$computer.baseColor}
     position={[4.56, 1, -3.4]}
     text="SCR"
   />
@@ -126,8 +126,8 @@
     font="/fonts/beefd.ttf"
     textAlign="center"
     fontSize={0.7}
-    color={game.baseColor}
+    color={$computer.baseColor}
     position={[4.56, 1, -3]}
-    text={game.score.toString()}
+    text={$computer.score.toString()}
   />
   

@@ -3,7 +3,7 @@
   import { Canvas, T } from '@threlte/core'
   extend({ Canvas })
 
-  import Computer from '$lib/computer/Computer.svelte'
+  import Scene from '$lib/computer/Scene.svelte'
 </script>
 
 <main class="relative h-screen w-screen bg-black flex items-center justify-center">
@@ -13,10 +13,10 @@
     <T.AmbientLight intensity={1.5} />
     <T.DirectionalLight position={[0, 10, 10]} intensity={2} />
     <T.PointLight position={[0, 10, 10]} intensity={1} />
-    <Computer />
+    <Scene />
   </Canvas>
 </main>
-
+yes 
 <style>
   :global(body) {
     margin: 0;
