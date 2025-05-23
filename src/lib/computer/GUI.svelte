@@ -67,7 +67,7 @@
     <!-- Centered UI Text -->
     {#if mainUiTexts?.text}
       <Text
-        font="/fonts/beefd.ttf"
+        font="/fonts/Beef'd.ttf"
         rotation.x={DEG2RAD * -90}
         anchorX="50%"
         anchorY="50%"
@@ -83,7 +83,7 @@
   
   <!-- LEVEL (left column) -->
   <Text
-    font="/fonts/beefd.ttf"
+    font="/fonts/Beef'd.ttf"
     rotation.x={-90 * DEG2RAD}
     anchorX="50%"
     anchorY="50%"
@@ -98,7 +98,7 @@
     anchorX="50%"
     anchorY="0%"
     textAlign="center"
-    font="/fonts/beefd.ttf"
+    font="/fonts/Beef'd.ttf"
     lineHeight={1.4}
     fontSize={0.7}
     color={$computer.baseColor}
@@ -113,7 +113,7 @@
     anchorY="50%"
     textAlign="center"
     fontSize={0.3}
-    font="/fonts/beefd.ttf"
+    font="/fonts/Beef'd.ttf"
     color={$computer.baseColor}
     position={[4.56, 1, -3.4]}
     text="SCR"
@@ -123,7 +123,7 @@
     anchorX="50%"
     anchorY="0%"
     lineHeight={1.4}
-    font="/fonts/beefd.ttf"
+    font="/fonts/Beef'd.ttf"
     textAlign="center"
     fontSize={0.7}
     color={$computer.baseColor}

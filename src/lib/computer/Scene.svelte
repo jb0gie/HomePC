@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { T } from '@threlte/core';
+	import { T } from '@threlte/core';
   import Computer from './Computer.svelte';
   import GUI from './GUI.svelte';
   import Renderer from './Renderer.svelte';
