@@ -17,7 +17,7 @@
   let currentYaw = 0
   let currentPitch = 0
 
-  const target = { x: 0, y: 1.5, z: 0.03 } // screen center
+  const target = { x: 0, y: 1.5, z: 5 } // screen center
 
   function handleMouseMove(event: MouseEvent) {
     const { innerWidth, innerHeight } = window

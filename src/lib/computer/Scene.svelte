@@ -7,8 +7,8 @@
 </script>
 
 <T.Group>
-  <Computer />
-  <GUI />
   <Renderer />
+  <Computer />
+  <!-- <GUI /> -->
   <!-- Add more scene elements or logic here -->
 </T.Group> 
