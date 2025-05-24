@@ -15,13 +15,16 @@
 <T.Group>
   <Renderer />
   <Computer>
-    <svelte:fragment slot="screen-ui">
-      {#if currentScene}
-        <svelte:component this={currentScene.component} />
-      {:else}
-        <div style="color: red;">No scene found for state: {computerState.state}</div>
-      {/if}
-    </svelte:fragment>
+    {#if currentScene}
+      <svelte:component this={currentScene.component} />
+    {:else}
+      <T.Group position={[0, 0, 0.01]}>
+        <T.Mesh>
+          <T.PlaneGeometry args={[2, 1]} />
+          <T.MeshBasicMaterial color="#ff0000" />
+        </T.Mesh>
+      </T.Group>
+    {/if}
   </Computer>
   <!-- <GUI /> -->
   <!-- Add more scene elements or logic here -->

@@ -111,7 +111,7 @@ Command: npx @threlte/gltf@3.0.1 Computer.glb -t -k -D
       Keyboard: THREE.MeshStandardMaterial
       matScreen: THREE.MeshStandardMaterial
       matLight: THREE.MeshStandardMaterial
-      matGlass: THREE.MeshPhysicalMaterial
+      matGlass: THREE.MeshStandardMaterial
     }
   }
 
@@ -578,27 +578,38 @@ Command: npx @threlte/gltf@3.0.1 Computer.glb -t -k -D
       name="Screen"
       geometry={gltf.nodes.Screen.geometry}
       material={gltf.materials.matScreen}
+      on:create={({ ref }) => {
+        console.log('Screen mesh created:', ref);
+        console.log('Screen position:', ref.position);
+        console.log('Screen geometry:', ref.geometry.boundingBox);
+        // Force compute bounding box
+        ref.geometry.computeBoundingBox();
+        console.log('Screen bounding box:', ref.geometry.boundingBox);
+      }}
     />
-    {@render children?.({ ref })}
+    {#if children}
+      {@render children({ ref })}
+    {/if}
+    
     <T.Mesh
       name="ScreenBacklight"
       geometry={gltf.nodes.ScreenBacklight.geometry}
       material={gltf.materials.matLight}
     />
+    
     <T.Mesh
       name="ScreenGlass"
       geometry={gltf.nodes.ScreenGlass.geometry}
       material={gltf.materials.matGlass}
-      roughness={0.1}
-      transmission={1}
+      roughness={0.3}
+      transmission={0.5}
       thickness={0}
       ior={1.1}
-      opacity={0.7}
+      opacity={0.3}
       transparent={true}
       metalness={0}
-      clearcoat={0}
-      clearcoatRoughness={0.1}
     />
+    
     <T.Mesh
       name="NavBar"
       geometry={gltf.nodes.NavBar.geometry}
