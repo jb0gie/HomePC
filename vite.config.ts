@@ -42,7 +42,8 @@ export default defineConfig({
 	build: {
 		commonjsOptions: {
 			include: [/tweakpane/]
-		}
+		},
+		target: 'esnext'
 	},
 	test: {
 		workspace: [

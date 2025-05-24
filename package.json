@@ -45,6 +45,7 @@
 	},
 	"dependencies": {
 		"@dimforge/rapier3d-compat": "^0.16.2",
+		"@studio-freight/lenis": "^1.0.39",
 		"@theatre/core": "^0.7.2",
 		"@theatre/studio": "^0.7.2",
 		"@threlte/core": "^8.0.4",
@@ -55,9 +56,8 @@
 		"@threlte/theatre": "^3.0.3",
 		"@threlte/xr": "^1.0.5",
 		"@types/three": "^0.176.0",
+		"postprocessing": "^6.37.3",
 		"three": "^0.176.0",
-		"tweakpane": "3.1.5",
-		"@studio-freight/lenis": "^1.0.39",
-		"postprocessing": "^6.37.3"
+		"tweakpane": "3.1.5"
 	}
 }

@@ -579,6 +579,7 @@ Command: npx @threlte/gltf@3.0.1 Computer.glb -t -k -D
       geometry={gltf.nodes.Screen.geometry}
       material={gltf.materials.matScreen}
     />
+    {@render children?.({ ref })}
     <T.Mesh
       name="ScreenBacklight"
       geometry={gltf.nodes.ScreenBacklight.geometry}
@@ -588,6 +589,15 @@ Command: npx @threlte/gltf@3.0.1 Computer.glb -t -k -D
       name="ScreenGlass"
       geometry={gltf.nodes.ScreenGlass.geometry}
       material={gltf.materials.matGlass}
+      roughness={0.1}
+      transmission={1}
+      thickness={0}
+      ior={1.1}
+      opacity={0.7}
+      transparent={true}
+      metalness={0}
+      clearcoat={0}
+      clearcoatRoughness={0.1}
     />
     <T.Mesh
       name="NavBar"
@@ -597,6 +607,4 @@ Command: npx @threlte/gltf@3.0.1 Computer.glb -t -k -D
   {:catch err}
     {@render error?.({ error: err })}
   {/await}
-
-  {@render children?.({ ref })}
 </T.Group>

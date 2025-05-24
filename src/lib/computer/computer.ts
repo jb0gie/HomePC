@@ -1,11 +1,11 @@
 import { writable } from 'svelte/store'
 
-export type ComputerState = 'off' | 'menu' | 'running' | 'game-over' | 'level-complete'
+export type ComputerState = 'off' | 'boot' | 'menu' | 'running' | 'game-over' | 'level-complete'
 
 export const computer = writable({
-  state: 'off' as ComputerState,
+  state: 'boot' as ComputerState,
   score: 0,
   levelIndex: 0,
   baseColor: '#fff',
-  arcadeMachineScene: null as unknown | null
+  computerScene: null as unknown | null
 }) 

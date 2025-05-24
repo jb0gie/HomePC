@@ -9,7 +9,7 @@
 
   // Max angles (radians)
   const maxYaw = 0.18 // left/right
-  const maxPitch = 0.09 // up/down
+  const maxPitch = 0.3 // up/down
 
   // Target and current rotation
   let targetYaw = 0
@@ -17,7 +17,7 @@
   let currentYaw = 0
   let currentPitch = 0
 
-  const target = { x: 0, y: 1.5, z: 5 } // screen center
+  const target = { x: 0, y: 1.5, z: 1 } // screen center
 
   function handleMouseMove(event: MouseEvent) {
     const { innerWidth, innerHeight } = window
