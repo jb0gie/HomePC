@@ -121,7 +121,7 @@ Command: npx @threlte/gltf@3.0.1 Computer.glb -t -k -D
 <T.Group
   bind:ref
   dispose={false}
-  {...props}
+  {...(props as any)}
 >
   {#await gltf}
     {@render fallback?.()}
@@ -588,7 +588,7 @@ Command: npx @threlte/gltf@3.0.1 Computer.glb -t -k -D
       }}
     />
     {#if children}
-      {@render children({ ref })}
+      {@render children({ ref: ref! })}
     {/if}
     
     <T.Mesh
@@ -601,13 +601,7 @@ Command: npx @threlte/gltf@3.0.1 Computer.glb -t -k -D
       name="ScreenGlass"
       geometry={gltf.nodes.ScreenGlass.geometry}
       material={gltf.materials.matGlass}
-      roughness={0.3}
-      transmission={0.5}
-      thickness={0}
-      ior={1.1}
-      opacity={0.3}
-      transparent={true}
-      metalness={0}
+      opacity={0}
     />
     
     <T.Mesh

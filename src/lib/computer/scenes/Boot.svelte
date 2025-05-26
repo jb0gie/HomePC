@@ -19,7 +19,7 @@
 </script>
 
 <!-- Position the UI where the screen should be -->
-<T.Group position={[0, 1.4, 0.1]} rotation={[0, 0, 0]}>
+<T.Group position={[0, 1.4, 0]} rotation={[0, 0, 0]}>
   <T.Mesh
     on:click={handleBoot}
     on:keydown={onKeydown}
@@ -27,7 +27,7 @@
     tabindex="0"
   >
     <T.PlaneGeometry args={[1.6, 1.2]} />
-    <T.MeshBasicMaterial color="#000" transparent={true} opacity={0.8} />
+    <T.MeshBasicMaterial color="#000" transparent={true} opacity={0} />
   </T.Mesh>
   <Text
     fontSize={0.08}
