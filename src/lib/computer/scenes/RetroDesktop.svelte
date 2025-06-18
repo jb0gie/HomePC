@@ -33,41 +33,41 @@
   })
 
   function getDesktopContent() {
-    return `╔══════════════════════════════════════════════════════════════════════════════╗
-║                                MS-DOS 6.22                                  ║
-║                              HOMEPC-386 Desktop                             ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║                                                                              ║
-║                                                                              ║
-║    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐        ║
-║    │   [Network]     │    │   [Files]       │    │   [System]      │        ║
-║    │   Manager       │    │   Manager       │    │   Info          │        ║
-║    └─────────────────┘    └─────────────────┘    └─────────────────┘        ║
-║                                                                              ║
-║                                                                              ║
-║    ┌─────────────────┐    ┌─────────────────┐                               ║
-║    │   [Games]       │    │   [Shutdown]    │                               ║
-║    │                 │    │                 │                               ║
-║    └─────────────────┘    └─────────────────┘                               ║
-║                                                                              ║
-║                                                                              ║
-║                                                                              ║
-║  Use ↑↓ arrows to navigate, [ENTER] to select                               ║
-║                                                                              ║
-╚══════════════════════════════════════════════════════════════════════════════╝`
+    return `╔════════════════════════════════════════════════════╗
+║                    MS-DOS 6.22                     ║
+║                 HOMEPC-386 Desktop                 ║
+╠════════════════════════════════════════════════════╣
+║                                                    ║
+║                                                    ║
+║   ┌─────────────┐  ┌─────────────┐  ┌───────────┐  ║
+║   │ [Network]   │  │ [Files]     │  │ [System]  │  ║
+║   │ Manager     │  │ Manager     │  │ Info      │  ║
+║   └─────────────┘  └─────────────┘  └───────────┘  ║
+║                                                    ║
+║                                                    ║
+║   ┌─────────────┐  ┌─────────────┐                 ║
+║   │ [Games]     │  │ [Shutdown]  │                 ║
+║   │             │  │             │                 ║
+║   └─────────────┘  └─────────────┘                 ║
+║                                                    ║
+║                                                    ║
+║                                                    ║
+║  Use ↑↓ arrows to navigate, [ENTER] to select     ║
+║                                                    ║
+╚════════════════════════════════════════════════════╝`
   }
 </script>
 
 <T.Group position={[0, 1.4, 0.01]} rotation={[0, 0, 0]}>
   <!-- Screen background -->
   <T.Mesh>
-    <T.PlaneGeometry args={[1.6, 1.2]} />
+    <T.PlaneGeometry args={[1.4, 1.0]} />
     <T.MeshBasicMaterial color="#008080" />
   </T.Mesh>
   
   <!-- Desktop content -->
   <Text
-    fontSize={0.018}
+    fontSize={0.014}
     color="#ffffff"
     anchorX="50%"
     anchorY="50%"
@@ -78,28 +78,28 @@
   
   <!-- Selection highlight -->
   {#if selectedIcon === 0}
-    <T.Mesh position={[-0.4, 0.15, 0.002]}>
-      <T.PlaneGeometry args={[0.3, 0.15]} />
+    <T.Mesh position={[-0.32, 0.12, 0.002]}>
+      <T.PlaneGeometry args={[0.24, 0.12]} />
       <T.MeshBasicMaterial color="#ffff00" transparent opacity={0.3} />
     </T.Mesh>
   {:else if selectedIcon === 1}
-    <T.Mesh position={[0, 0.15, 0.002]}>
-      <T.PlaneGeometry args={[0.3, 0.15]} />
+    <T.Mesh position={[0, 0.12, 0.002]}>
+      <T.PlaneGeometry args={[0.24, 0.12]} />
       <T.MeshBasicMaterial color="#ffff00" transparent opacity={0.3} />
     </T.Mesh>
   {:else if selectedIcon === 2}
-    <T.Mesh position={[0.4, 0.15, 0.002]}>
-      <T.PlaneGeometry args={[0.3, 0.15]} />
+    <T.Mesh position={[0.32, 0.12, 0.002]}>
+      <T.PlaneGeometry args={[0.24, 0.12]} />
       <T.MeshBasicMaterial color="#ffff00" transparent opacity={0.3} />
     </T.Mesh>
   {:else if selectedIcon === 3}
-    <T.Mesh position={[-0.4, -0.15, 0.002]}>
-      <T.PlaneGeometry args={[0.3, 0.15]} />
+    <T.Mesh position={[-0.32, -0.12, 0.002]}>
+      <T.PlaneGeometry args={[0.24, 0.12]} />
       <T.MeshBasicMaterial color="#ffff00" transparent opacity={0.3} />
     </T.Mesh>
   {:else if selectedIcon === 4}
-    <T.Mesh position={[0, -0.15, 0.002]}>
-      <T.PlaneGeometry args={[0.3, 0.15]} />
+    <T.Mesh position={[0, -0.12, 0.002]}>
+      <T.PlaneGeometry args={[0.24, 0.12]} />
       <T.MeshBasicMaterial color="#ffff00" transparent opacity={0.3} />
     </T.Mesh>
   {/if}

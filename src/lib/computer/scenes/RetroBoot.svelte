@@ -54,13 +54,13 @@
 <T.Group position={[0, 1.4, 0.01]} rotation={[0, 0, 0]}>
   <!-- Screen background -->
   <T.Mesh>
-    <T.PlaneGeometry args={[1.6, 1.2]} />
+    <T.PlaneGeometry args={[1.4, 1.0]} />
     <T.MeshBasicMaterial color="#000000" />
   </T.Mesh>
   
   <!-- Boot text -->
   <Text
-    fontSize={0.025}
+    fontSize={0.018}
     color="#ffffff"
     anchorX="50%"
     anchorY="50%"
